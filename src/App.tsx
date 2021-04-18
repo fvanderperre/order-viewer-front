@@ -1,35 +1,21 @@
 import React from 'react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
-import logo from './logo.svg'
-import firebase from "firebase"
+import Home from './pages/home'
+import Navigation from './components/navigation'
+import Orders from './pages/orders'
+import * as ROUTES from './core/constants/routes'
 
 function App() {
 
-  const firebaseApp = firebase.apps[0]
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      <div>
-        <h1>React & Firebase</h1>
-        <code>
-          <pre>{JSON.stringify(firebaseApp.options, null, 2)}</pre>
-        </code>
-      </div>
+      <Router>
+        <Navigation />
+        <hr />
+        <Route exact path={ROUTES.HOME_PAGE} component={Home} />
+        <Route path={ROUTES.ORDERS_PAGE} component={Orders} />
+      </Router>
     </div>
   )
 }
