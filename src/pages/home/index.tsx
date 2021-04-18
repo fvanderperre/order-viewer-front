@@ -1,14 +1,12 @@
 import React from 'react'
-import { FirebaseContext } from '../../core/firebase'
+import { SignInForm } from '../../components/signin'
 
 const Home = () => (
     <div>
-        <FirebaseContext.Consumer>
-            {firebase => {
-                return <div>I've access to Firebase and render something.</div>
-            }}
-        </FirebaseContext.Consumer>
-        landing :D
+        <div>
+            <h1>SignIn</h1>
+            <SignInForm />
+        </div>
     </div>
 )
 

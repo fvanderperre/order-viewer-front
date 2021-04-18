@@ -1,23 +1,19 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.css'
-import Home from './pages/home'
 import Navigation from './components/navigation'
-import Orders from './pages/orders'
 import * as ROUTES from './core/constants/routes'
+import { withAuthentication } from './core/session'
+import Home from './pages/home'
+import Orders from './pages/orders'
 
-function App() {
-
-  return (
-    <div className="App">
-      <Router>
+const App = () => (
+    <Router>
         <Navigation />
         <hr />
         <Route exact path={ROUTES.HOME_PAGE} component={Home} />
-        <Route path={ROUTES.ORDERS_PAGE} component={Orders} />
-      </Router>
-    </div>
-  )
-}
+        <Route exact path={ROUTES.ORDERS_PAGE} component={Orders} />
+    </Router>
+)
 
-export default App
+export default withAuthentication(App)
