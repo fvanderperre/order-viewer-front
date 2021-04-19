@@ -52,7 +52,7 @@ class SignInFormBase extends Component<SigninProps, SigninState>{
         this.setState({ password: event.target.value })
     }
 
-    render() {
+    render = () => {
         const { email, password, error } = this.state
 
         const isInvalid = password === '' || email === ''
@@ -87,6 +87,5 @@ const SignInForm = compose(
     withRouter,
     withFirebase,
 )(SignInFormBase)
-
 
 export { SignInForm }

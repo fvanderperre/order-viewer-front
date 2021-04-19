@@ -1,7 +1,8 @@
-import React from 'react';
-import OrderList from '../../components/orders';
-import Unauthorized from '../../components/unauthorized';
-import { AuthUserContext } from '../../core/session';
+import React from 'react'
+import OrderList from '../../components/orders'
+import { SignOut } from '../../components/signout'
+import Unauthorized from '../../components/unauthorized'
+import { AuthUserContext } from '../../core/session'
 
 const Orders = () => (
     <div>
@@ -14,7 +15,11 @@ const Orders = () => (
 )
 
 const OrdersAuth = () => (
-    <OrderList />
+    <div>
+
+        <SignOut />
+        <OrderList />
+    </div>
 )
 
 const OrdersNonAuth = () => (

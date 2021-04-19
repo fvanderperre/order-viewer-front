@@ -13,6 +13,9 @@ class Firebase {
 
     signIn = (email: string, password: string): Promise<firebase.auth.UserCredential> =>
         this.auth.signInWithEmailAndPassword(email, password)
+
+    signOut = (): Promise<void> =>
+        this.auth.signOut()
 }
 
 export default Firebase
