@@ -18,9 +18,13 @@ const OrdersAuth = () => (
     <div>
 
         <SignOut />
-        <OrderList />
+        <AuthUserContext.Consumer>
+            {(authUser) => <OrderList authUser={authUser} />}
+        </AuthUserContext.Consumer>
     </div>
 )
+
+
 
 const OrdersNonAuth = () => (
     <Unauthorized />

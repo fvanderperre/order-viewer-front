@@ -10,7 +10,6 @@ const App = () => (
     <Router>
         <Route exact path={ROUTES.HOME_PAGE} component={Home} />
         <Route exact path={ROUTES.ORDERS_PAGE} component={Orders} />
-        <Route render={() => <Redirect to="/" />} />
     </Router>
 )
 

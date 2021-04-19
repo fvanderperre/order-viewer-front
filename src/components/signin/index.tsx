@@ -32,8 +32,7 @@ class SignInFormBase extends Component<SigninProps, SigninState>{
 
         this.props.firebase
             .signIn(email, password)
-            .then((credentials) => {
-                console.log('credentials', credentials)
+            .then(() => {
                 this.setState({ ...INITIAL_STATE })
                 this.props.history.push(ROUTES.ORDERS_PAGE)
             })
