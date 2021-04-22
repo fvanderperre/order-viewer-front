@@ -28,3 +28,6 @@ export const isOrderValid = ({ address, bookingDate, customer, title, uid }: Ord
 
 export const formatAddress = ({ city, country, street, zip }: Address): string =>
     street + ' ' + zip + ' ' + city + ' ' + country
+
+export const formatCustomer = ({ name, phone, email }: Customer): string =>
+    name + ' ' + phone + ' ' + email

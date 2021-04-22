@@ -1,0 +1,16 @@
+.order-details-container {
+    width: 800px;
+    margin: auto;
+    background-color: white;
+}
+
+.order-details-row {
+    display: flex;
+    padding: 5px;
+}
+
+.order-details-label {
+    width: 200px;
+    display: flex !important;
+    justify-content: space-between;
+}

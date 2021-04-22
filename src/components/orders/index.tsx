@@ -1,4 +1,4 @@
-import { makeStyles, Paper, Table, TableContainer } from '@material-ui/core';
+import { Paper, Table, TableContainer } from '@material-ui/core';
 import TableBody from '@material-ui/core/TableBody';
 import React, { Component } from 'react';
 import Firebase, { withFirebase } from '../../core/firebase';
@@ -14,12 +14,6 @@ interface OrderListProps {
 interface OrderListState {
   orders: Array<OrderDTO>
 }
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
 
 class OrderList extends Component<OrderListProps, OrderListState> {
 
@@ -61,18 +55,13 @@ class OrderList extends Component<OrderListProps, OrderListState> {
       <Table aria-label='simple table'>
         <OrderTableHeaders />
         <TableBody>
-          {this.state.orders.map((order, index) => (OrderRow(order, index)))}
+          {this.state.orders.map((order, index) =>
+            <OrderRow key={index} order={order} />
+          )}
         </TableBody>
       </Table>
     </TableContainer>
-
   )
-
-  /*
-      {this.state.orders.map((order) => (
-        <p key={order.uid}>Hello, {order.title} from {order.bookingDate}!</p>
-      ))}
-  */
 }
 
 export default withFirebase(OrderList)
